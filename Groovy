@@ -1,0 +1,22 @@
+Linux Pipeline Code
+pipeline {
+    agent any
+
+    stages {
+        stage('Git clone from GITHUB') {
+            steps {
+               git branch: 'main', url: 'https://github.com/SarveshGugale/Project.git'
+            }
+        }
+        stage('Build By Sarvesh') {
+            steps {
+                sh 'javac helloworld.java'
+            }
+        }
+        stage('Run by java') {
+            steps {
+                sh 'java simple'
+            }
+        }
+    }
+}
