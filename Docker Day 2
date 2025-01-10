@@ -30,45 +30,34 @@ apt install python
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-
 Pull  -- pulling downloading image
 Run (pull)--  run the image - we will get container ()
  
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
  
- --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
- 
- Step 1 Pull nginx image 
-
-	docker pull nginx  
-	docker images 
-	
-	
+Step 1 Pull nginx image 
+docker pull nginx  
+docker images 
+		
 docker images
 Step 2 run nginx image and create a container.
 
-	docker run nginx 
-
+docker run nginx 
 Step 3 now the problem is this is web application so need to open a port and user via web browser 
  
 Step 4 run a container with port 80 
-
-	docker run -p 80:80 nginx
+docker run -p 80:80 nginx
 	
-	--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 docker run --name docker-nginx -p 80:80 nginx
 	
 docker ps
 docker stop docker-nginx
 docker rm docker-nginx                - removeed
-
-
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
 mkdir -p ~/docker-nginx/html
 cd ~/docker-nginx/html
 vi index.html
-
-
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Simple HTML code 
 
@@ -85,7 +74,6 @@ Simple HTML code
     </div>
   </body>
 </html>
-
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 simple HTML google page 
@@ -127,7 +115,6 @@ simple HTML google page
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-
 docker run
  --name docker-nginx:22.2
  -p 80:80                                           port maping vm:container
@@ -135,13 +122,9 @@ docker run
  -v ~/docker-nginx/html:/usr/share/nginx/html      volume mappinng attached and mapped   vm:container
  nginx
 
-
 docker run --name docker-nginx -p 80:80 -d -v ~/docker-nginx/html:/usr/share/nginx/html nginx
 
-
-
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
 
 	docker run
 	-it                   interactive 
@@ -149,7 +132,5 @@ docker run --name docker-nginx -p 80:80 -d -v ~/docker-nginx/html:/usr/share/ngi
 	-p 8080:8080                  port 
 	jenkins/jenkins:latest
 	
-	
-	COntainerised jenkin's CI server 
-	
-		docker run -it -d -p 8080:8080 jenkins/jenkins:latest
+	Containerised jenkin's CI server 
+	docker run -it -d -p 8080:8080 jenkins/jenkins:latest
